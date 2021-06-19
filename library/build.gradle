@@ -2,13 +2,13 @@ apply plugin: 'com.android.library'
 
 version = VERSION_NAME
 group = GROUP
-
+def lottieVersion = "3.4.0"
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 9
+        minSdkVersion 14
     }
 
     lintOptions {
@@ -17,7 +17,10 @@ android {
 }
 
 dependencies {
-    compile 'com.pnikosis:materialish-progress:1.0'
+    implementation 'com.pnikosis:materialish-progress:1.7'
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+
+
 }
 
 apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
